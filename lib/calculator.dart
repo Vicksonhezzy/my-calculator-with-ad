@@ -426,12 +426,6 @@ class _MyCalculatorState extends State<MyCalculator> {
     );
   }
 
-  // static final AdRequest request = AdRequest(
-  //   keywords: <String>['foo', 'bar'],
-  //   contentUrl: 'http://foo.com/bar.html',
-  //   nonPersonalizedAds: true,
-  // );
-
   RewardedAd _rewardedAd;
 
   BannerAd _anchoredBanner;
@@ -446,7 +440,7 @@ class _MyCalculatorState extends State<MyCalculator> {
 
   void _createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: 'ca-app-pub-4771455812622447/7679825413',
+        adUnitId: '(add adUnitId)',
         request: AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
@@ -489,23 +483,12 @@ class _MyCalculatorState extends State<MyCalculator> {
   }
 
   Future<void> _createAnchoredBanner(BuildContext context) async {
-    // final AnchoredAdaptiveBannerAdSize size =
-    //     await AdSize.getAnchoredAdaptiveBannerAdSize(
-    //   Orientation.portrait,
-    //   MediaQuery.of(context).size.width.truncate(),
-    // );
-
-    // if (size == null) {
-    //   print('Unable to get height of anchored banner.');
-    //   return;
-    // }
-
     banner = BannerAd(
       size: AdSize.banner,
       request: AdRequest(),
       adUnitId: Platform.isAndroid
-          ? 'ca-app-pub-4771455812622447/3284257168'
-          : 'ca-app-pub-3940256099942544/2934735716',
+          ? 'add Id'
+          : 'add Id',
       listener: BannerAdListener(
         onAdLoaded: (Ad ad) {
           print('$BannerAd loaded.');
